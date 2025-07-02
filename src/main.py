@@ -26,5 +26,5 @@ class QuestionRequest(BaseModel):
 
 @app.post("/ask")
 async def ask_question(request: QuestionRequest):
-    result = await main({"question" : request.question})
+    result = await kickoff({"question" : request.question})
     return result.final_output
