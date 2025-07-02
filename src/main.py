@@ -26,5 +26,5 @@ class QuestionRequest(BaseModel):
 
 @app.post("/ask")
 async def ask_question(request: QuestionRequest):
-    result = await main("What type of burgers your restaurant have in your menu?")
+    result = await main({"question" : request.question})
     return result.final_output
