@@ -1,4 +1,5 @@
-"builds": [
+{
+    "builds": [
     {
         "src": "src/main.py",
         "use": "@vercel/python"
@@ -10,3 +11,4 @@
         "dest": "src/main.py"
     }
 ]
+}
