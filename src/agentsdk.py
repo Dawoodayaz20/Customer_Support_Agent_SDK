@@ -60,6 +60,8 @@ async def kickoff(question: str):
     ),
     tools=[get_restaurant_data, get_menu]
   )
-
-  result = await Runner.run(Restaurant_manager, question)
-  return result.final_output
+  try:
+    result = await Runner.run(Restaurant_manager, question)
+    return result
+  except Exception as e:
+    return {"error": str(e)}
