@@ -50,7 +50,7 @@ async def get_menu(ctx: RunContextWrapper[Restaurant_info]):
   """ Funcion for getting menu of Buns&Burger restaurant """
   return f"Menu data for restaurant is {rest_data.menu_data}"
 
-async def main():
+async def kickoff(question: str):
   Restaurant_manager = Agent[Restaurant_info](
     name="Agent Manager",
     instructions="As the friendly and knowledgeable manager of 'Buns&Burger' online restaurant, your goal is to provide excellent customer service. Utilize the available tools to retrieve information about the restaurant and its menu. Respond to user inquiries in a helpful and polite manner, ensuring they have the information they need to order.",
@@ -62,6 +62,5 @@ async def main():
     tools=[get_restaurant_data, get_menu]
   )
 
-  result = await Runner.run(Restaurant_manager, "What type of burgers your restaurant have in your menu?")
-  print(result.final_output)
+  result = await Runner.run(Restaurant_manager, question)
   return result.final_output
