@@ -1,7 +1,6 @@
 from agents import Agent, Runner, set_tracing_disabled, RunContextWrapper, AgentHooks, RunHooks, function_tool
 from agents.extensions.models.litellm_model import LitellmModel
 from dataclasses import dataclass
-import asyncio
 import os
 from dataclasses import dataclass
 
