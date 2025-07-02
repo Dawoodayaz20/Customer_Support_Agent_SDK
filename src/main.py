@@ -27,7 +27,7 @@ class QuestionRequest(BaseModel):
 @app.post("/ask")
 async def ask_question(request: QuestionRequest):
     try:
-        result = await kickoff({"question": request.question})
+        result = await kickoff({request.question})
         return result.final_output
     except Exception as e:
         print(f"Error: {e}")
