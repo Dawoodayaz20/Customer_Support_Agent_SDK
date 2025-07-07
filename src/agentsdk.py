@@ -13,11 +13,12 @@ class Restaurant_info:
   menu_data: dict
 
 rest_data = Restaurant_info(
-    name="Buns&Burger",
+    name="Buns & Burger",
     data=[
     "Buns and Burger is an online restaurant.",
+    "Buns & Burger is not just a burger restaurant, they also have crispy and delicious pizzas.",
     "It does not have a physical location.",
-    "Known for burgers and pizzas.",
+    "Specialize in cooking delicious burgers and pizzas.",
     "Customers can order online and add items to a cart."
     ],
     menu_data={
