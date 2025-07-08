@@ -9,6 +9,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 @dataclass
 class Restaurant_info:
   name: str
+  servings: str
   data: list[str]
   menu_data: dict
 
@@ -47,7 +48,7 @@ async def get_restaurant_servings(ctx: RunContextWrapper[Restaurant_info]):
   return f"Restaurant name is {rest_data.name} their servings includes {rest_data.servings}."
 
 @function_tool
-async def get_restaurant_servings(ctx: RunContextWrapper[Restaurant_info]):
+async def get_restaurant_data(ctx: RunContextWrapper[Restaurant_info]):
   """ Function for getting restaurant other data. """
   return f"{rest_data.data}."
 
@@ -65,7 +66,7 @@ async def kickoff(question: str):
       model="gemini/gemini-1.5-flash", 
       api_key=GEMINI_API_KEY
     ),
-    tools=[get_restaurant_data, get_menu]
+    tools=[get_restaurant_servings, get_restaurant_data, get_menu]
   )
   try:
     result = await Runner.run(Restaurant_manager, question)
