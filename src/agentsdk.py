@@ -44,23 +44,23 @@ rest_data = Restaurant_info(
 
 @function_tool
 async def get_restaurant_servings(ctx: RunContextWrapper[Restaurant_info]):
-  """ Function for getting restaurant data related to its servings. """
-  return f"Restaurant name is {rest_data.name} their servings includes {rest_data.servings}."
+  """ Tool for getting restaurant name and its servings. """
+  return f"Restaurant name is {rest_data.name} and their servings includes {rest_data.servings}."
 
 @function_tool
 async def get_restaurant_data(ctx: RunContextWrapper[Restaurant_info]):
-  """ Function for getting restaurant other data. """
+  """ Tool for getting restaurant other data. """
   return f"{rest_data.data}."
 
 @function_tool
 async def get_menu(ctx: RunContextWrapper[Restaurant_info]):
-  """ Funcion for getting menu of Buns&Burger restaurant """
+  """ Tool for getting menu of Buns&Burger restaurant """
   return f"Menu data for restaurant is {rest_data.menu_data}"
 
 async def kickoff(question: str):
   Restaurant_manager = Agent[Restaurant_info](
     name="Agent Manager",
-    instructions="As the friendly and knowledgeable manager of 'Buns&Burger' online restaurant, your goal is to provide excellent customer service. Utilize the available tools to retrieve information about the restaurant and its menu. Respond to user inquiries in a helpful and polite manner, ensuring they have the information they need to order.",
+    instructions="As the friendly and knowledgeable manager of 'Buns&Burger' online restaurant, known for its delicious Burgers and Pizzas. your goal is to provide excellent customer service. Utilize the available tools to retrieve information about the restaurant and its menu. Respond to user inquiries in a helpful and polite manner, ensuring they have the information they need to order.",
     model=LitellmModel
     (
       model="gemini/gemini-1.5-flash", 
