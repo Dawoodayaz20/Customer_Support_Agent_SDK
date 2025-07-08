@@ -6,6 +6,8 @@ from dataclasses import dataclass
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
+set_tracing_disabled(disabled=True)
+
 @dataclass
 class Restaurant_info:
   name: str
