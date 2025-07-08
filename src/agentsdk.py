@@ -65,7 +65,7 @@ async def kickoff(question: str):
     instructions="As the friendly and knowledgeable manager of 'Buns&Burger' online restaurant, known for its delicious Burgers and Pizzas. your goal is to provide excellent customer service. Utilize the available tools to retrieve information about the restaurant and its menu. Respond to user inquiries in a helpful and polite manner, ensuring they have the information they need to order.",
     model=LitellmModel
     (
-      model="gemini/gemini-1.5-flash", 
+      model="gemini/gemini-2.0-flash", 
       api_key=GEMINI_API_KEY
     ),
     tools=[get_restaurant_servings, get_restaurant_data, get_menu]
