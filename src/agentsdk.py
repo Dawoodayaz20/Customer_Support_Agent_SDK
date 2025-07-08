@@ -14,9 +14,10 @@ class Restaurant_info:
 
 rest_data = Restaurant_info(
     name="Buns & Burger",
+    servings="Delicious Burgers and crispy Pizzas.",
     data=[
     "Buns and Burger is an online restaurant.",
-    "Buns & Burger is not just a burger restaurant, they also have crispy and delicious pizzas.",
+    "Not being just a burger restaurant, they also serve crispy and delicious pizzas.",
     "It does not have a physical location.",
     "Specialize in cooking delicious burgers and pizzas.",
     "Customers can order online and add items to a cart."
@@ -41,9 +42,14 @@ rest_data = Restaurant_info(
   })
 
 @function_tool
-async def get_restaurant_data(ctx: RunContextWrapper[Restaurant_info]):
-  """ Function for getting restaurant data. """
-  return f"Restaurant name is {rest_data.name} restaurant info is {rest_data.data}"
+async def get_restaurant_servings(ctx: RunContextWrapper[Restaurant_info]):
+  """ Function for getting restaurant data related to its servings. """
+  return f"Restaurant name is {rest_data.name} their servings includes {rest_data.servings}."
+
+@function_tool
+async def get_restaurant_servings(ctx: RunContextWrapper[Restaurant_info]):
+  """ Function for getting restaurant other data. """
+  return f"{rest_data.data}."
 
 @function_tool
 async def get_menu(ctx: RunContextWrapper[Restaurant_info]):
