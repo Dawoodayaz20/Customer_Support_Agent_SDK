@@ -14,7 +14,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://buns-and-burger-in-react.vercel.app"],
+    allow_origins=[
+        "https://buns-and-burger-in-react.vercel.app",
+        "https://bunsandburger.vercel.app/"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
