@@ -31,6 +31,10 @@ class QuestionRequest(BaseModel):
 async def ask_question(request: QuestionRequest):
     try:
         result = await kickoff(request.question)
+        # Check if result is a dictionary (error case)
+        if isinstance(result, dict) and "error" in result:
+            return result
+        # Otherwise, it's an object with final_output
         return result.final_output
     except Exception as e:
         print(f"Error: {e}")
