@@ -1,3 +1,4 @@
 uvicorn
 fastapi
 openai-agents[litellm]
+orjson
