@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import os
 from dataclasses import dataclass
 
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY_2")
 
 set_tracing_disabled(disabled=True)
 
